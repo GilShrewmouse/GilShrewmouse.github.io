@@ -1,14 +1,14 @@
 ---
 layout: default
-title: "Ekaterina Podsevalova - (L)QA in gamedev"
-description: "QA manager and localization QA (LQA) in games. Portfolio of 40+ titles, from Cyberpunk 2077 to Hades II and Dispatch. Mostly silent lurker by life."
+title: "Ekaterina Podsevalova"
+description: "All-around QA in games with a special passion for LQA. Portfolio of 40+ titles, from Cyberpunk 2077 to Hades II and Dispatch. Mostly silent lurker by life."
 ---
 <div class="first-screen">
 <div class="intro">
 <section class="hero">
   <img class="avatar" src="/assets/img/av_square.jpg" alt="Portrait of Ekaterina with windswept green hair and glasses, the sea behind" width="360" height="360">
   <div class="hero-text">
-    <h1>Hi, I'm Ekaterina!</h1>
+    <h1>Ekaterina Podsevalova</h1>
     <p class="tagline">Mostly silent lurker by life, (L)QA in gamedev by trade.<br>
     <i>By the word, I wind the gears.</i></p>
   </div>
@@ -16,12 +16,12 @@ description: "QA manager and localization QA (LQA) in games. Portfolio of 40+ ti
 
 <section id="about" class="panel">
   <h2>About</h2>
-  <p class="about-text">I started my career in gamedev as a community manager (there are a few casual mobile games under my belt, and ArcheAge), but this is about my next step: QA.<br><br>
+  <p class="about-text">Hi, I'm Ekaterina! I started my career in gamedev as a community manager (there are a few casual mobile games under my belt, and ArcheAge), but this is about my next step: QA.<br><br>
 In 2020, I joined <a href="https://www.mostgames.org/" target="_blank">The Most Games</a> as a QA tester, and since then, I evolved into a senior QA tester, then lead QA, and finally QA manager. Not your usual Pokémon!<br><br>
 I have experience with functional, compliance, and compatibility testing - and, of course, my favorite: localization testing. And I still find time to work on some projects personally - I'd hate to lose my hands-on experience!</p>
   <p class="socials">
     {% for link in site.data.links %}
-    <a class="button" href="{{ link.url }}"{% unless link.url contains "mailto:" %} target="_blank" rel="noopener me"{% endunless %}>
+    <a class="button{% if link.primary %} primary{% endif %}" href="{{ link.url }}"{% unless link.url contains "mailto:" %} target="_blank" rel="noopener me"{% endunless %}>
       {% if link.icon %}<span class="icon" aria-hidden="true" style="--icon: url('{{ '/assets/img/icons/' | append: link.icon | append: '.svg' | relative_url }}'){% if link.icon_shift %}; --icon-shift: {{ link.icon_shift }}{% endif %}"></span>{% endif %}{{ link.label }}
     </a>
     {% endfor %}
@@ -32,7 +32,7 @@ I have experience with functional, compliance, and compatibility testing - and, 
 
 <section id="portfolio" class="panel">
   <h2>Portfolio</h2>
-  <p class="portfolio-intro">Here are the games I worked on, sorted by year. The year is usually the same as the release year, but not always - for some projects, it was a DLC release, a new edition, or a specific year in which I was part of the team.</p>
+  <p class="portfolio-intro">Here are the games I worked on, sorted by year. The year is usually the same as the release year, but not always - for some projects, it is a DLC release, a new edition, or a specific year in which I was part of the team.</p>
 
   {% assign years = site.data.games | where_exp: "g", "g.year" | map: "year" | uniq | sort | reverse %}
   {% assign not_released = site.data.games | where: "group", "Not released" | sort_natural: "title" %}

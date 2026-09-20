@@ -1,25 +1,28 @@
-# Buttons in the About block, shown in this order.
+# Buttons in the About block, shown in this order
+# (professional first, then community, then projects and gaming).
 #   label - text on the button
 #   url   - where it goes (use "mailto:address" for e-mail)
 #   icon  - file name (without .svg) in /assets/img/icons/. It is recolored with the site's gold via a CSS mask.
 #   icon_shift - optional. Moves the icon up (negative) or down (positive), e.g. "-0.1em", when a drawing
 #                looks too low or too high next to the others.
-- label: "Email"
-  url: "mailto:c.podsevalova@gmail.com"
-  icon: "gmail"
+#   primary - optional. true = filled gold button (the main way to get in touch).
 - label: "LinkedIn"
   url: "https://www.linkedin.com/in/c-podsevalova/"
   icon: "linkedin"
   icon_shift: "-0.1em"
+- label: "Email"
+  url: "mailto:c.podsevalova@gmail.com"
+  icon: "gmail"
+  primary: true
 - label: "Mastodon"
   url: "https://localization.cafe/@gilnaure"
   icon: "mastodon"
-- label: "Steam"
-  url: "https://steamcommunity.com/id/gilnaure/"
-  icon: "steam"
-- label: "itch.io"
-  url: "https://gilshrewmouse.itch.io/"
-  icon: "itchdotio"
 - label: "Bluesky"
   url: "https://bsky.app/profile/gilnaure.bsky.social"
   icon: "bluesky"
+- label: "itch.io"
+  url: "https://gilshrewmouse.itch.io/"
+  icon: "itchdotio"
+- label: "Steam"
+  url: "https://steamcommunity.com/id/gilnaure/"
+  icon: "steam"

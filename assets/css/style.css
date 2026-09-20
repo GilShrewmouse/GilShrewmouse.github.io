@@ -130,6 +130,9 @@ footer { text-align: center; color: var(--muted); padding: 30px; }
   border: 1px solid var(--accent); color: var(--accent); transition: all .15s;
 }
 .button:hover { background: var(--accent); color: var(--on-accent); text-decoration: none; }
+/* The main button (Email): filled gold; on hover it turns into the outlined style */
+.button.primary { background: var(--accent); color: var(--on-accent); font-weight: 600; }
+.button.primary:hover { background: transparent; color: var(--accent); }
 /* Icon = the SVG file used as a mask, painted with the text color, so it always matches
    the button (gold, and dark on the gold hover background). The file is set per button
    through the --icon variable in index.html. */
