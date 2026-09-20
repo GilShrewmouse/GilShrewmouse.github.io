@@ -2,23 +2,83 @@
 layout: default
 title: Home
 ---
+<div class="first-screen">
+<div class="intro">
 <section class="hero">
   <img class="avatar" src="/assets/img/av_square.jpg" alt="">
-  <h1>PLACEHOLDER - HI, I AM ME</h1>
-  <p class="tagline">PLACEHOLDER SHORT ONE-LINER.</p>
+  <div class="hero-text">
+    <h1>Hi, I'm Ekaterina!</h1>
+    <p class="tagline">Mostly silent lurker by life, (L)QA in gamedev by trade.</p>
+  </div>
 </section>
 
 <section id="about" class="panel">
   <h2>About</h2>
-  <p>MY ABOUT TEXT HERE.</p>
-  <p class="links">
-    <a href="mailto:c.podsevalova@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/c-podsevalova/">LinkedIn</a>
+  <p class="about-text">I started my career in gamedev as a community manager (there are a few casual mobile games under my belt, and ArcheAge), but this is about my next step: QA.<br><br>
+In 2020, I joined <a href="https://www.mostgames.org/" target="_blank">The Most Games</a> as a QA tester, and since then, I evolved into a senior QA tester, then lead QA, and finally QA manager. Not your usual Pokémon!<br><br>
+I have experience with functional, compliance, and compatibility testing - and, of course, my favorite: localization testing. And I still find time to work on some projects personally - I'd hate to lose my hands-on experience!</p>
+  <p class="socials">
+    {% for link in site.data.links %}
+    <a class="button" href="{{ link.url }}"{% unless link.url contains "mailto:" %} target="_blank" rel="noopener me"{% endunless %}>
+      {% if link.icon %}<span class="icon" aria-hidden="true" style="--icon: url('{{ '/assets/img/icons/' | append: link.icon | append: '.svg' | relative_url }}'){% if link.icon_shift %}; --icon-shift: {{ link.icon_shift }}{% endif %}"></span>{% endif %}{{ link.label }}
+    </a>
+    {% endfor %}
   </p>
 </section>
+</div>
+</div>
 
-<section class="panel">
+<section id="portfolio" class="panel">
   <h2>Portfolio</h2>
-  <p>Games I have worked on, by year.</p>
-  <p><a class="button" href="{{ '/games.html' | relative_url }}">See my games</a></p>
+  <p class="portfolio-intro">Here are the games I worked on, sorted by year. The year is usually the same as the release year, but not always - for some projects, it was a DLC release, a new edition, or a specific year in which I was part of the team.</p>
+
+  {% assign years = site.data.games | where_exp: "g", "g.year" | map: "year" | uniq | sort | reverse %}
+  {% assign not_released = site.data.games | where: "group", "Not released" | sort_natural: "title" %}
+
+  {% comment %} Tabs: years newest first, then "Not released". {% endcomment %}
+  <div class="year-tabs" role="tablist" aria-label="Choose a year">
+    {% for y in years %}
+    <button type="button" class="year-tab" role="tab" data-year="{{ y }}">{{ y }}</button>
+    {% endfor %}
+    {% if not_released.size > 0 %}
+    <button type="button" class="year-tab" role="tab" data-year="not-released">Not released</button>
+    {% endif %}
+  </div>
+
+  {% comment %} One panel per tab. Without JavaScript all panels are simply shown one after another. {% endcomment %}
+  <div id="portfolio-panels">
+    {% for y in years %}
+      {% assign year_games = site.data.games | where_exp: "g", "g.year == y" | sort_natural: "title" %}
+      {% include portfolio-group.html key=y title=y games=year_games %}
+    {% endfor %}
+    {% include portfolio-group.html key="not-released" title="Not released" games=not_released %}
+  </div>
+
+  <script>
+    (function () {
+      var section = document.getElementById('portfolio');
+      var tabs = section.querySelectorAll('.year-tab');
+      var panels = section.querySelectorAll('.year-panel');
+      if (!tabs.length) return;
+
+      function show(year) {
+        tabs.forEach(function (t) {
+          var on = t.dataset.year === year;
+          t.classList.toggle('active', on);
+          t.setAttribute('aria-selected', on);
+        });
+        panels.forEach(function (p) { p.hidden = p.dataset.year !== year; });
+      }
+
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () { show(t.dataset.year); });
+      });
+
+      // Open on the current year; if it has no games, on the newest year.
+      var now = String(new Date().getFullYear());
+      var hasNow = Array.prototype.some.call(tabs, function (t) { return t.dataset.year === now; });
+      section.classList.add('tabs-on');
+      show(hasNow ? now : tabs[0].dataset.year);
+    })();
+  </script>
 </section>

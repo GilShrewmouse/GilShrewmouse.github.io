@@ -1,10 +1,287 @@
-- title: Gothic 1 Remake
-  role: Russian LQA
+# Portfolio list. One block per game.
+#   title    - name shown on the tile
+#   role     - what you did, shown under the title
+#   year     - the year the game is listed under (usually the release year, not always)
+#   credited - set to false if you are not in the credits; adds "(not credited)" after the role
+#   group    - use INSTEAD of year for the "Not released" section (last tab)
+#   image    - cover in /assets/img/games/ (460x215). Leave empty for an empty tile.
+#   url      - link opened on click. Leave empty for no link.
+# Year tabs are created automatically, newest first. Inside a year, tiles are sorted A-Z by title,
+# so it does not matter where in this file a game is placed - only its `year:` counts.
+
+# ---------- 2026 ----------
+- title: "Gothic 1 Remake"
+  role: "RU LQA"
   year: 2026
-  image: /assets/img/games/Gothic1Remake.jpg
-  url: https://store.steampowered.com/app/1297900/Gothic_1_Remake/
+  image: "/assets/img/games/Gothic1Remake.jpg"
+  url: "https://store.steampowered.com/app/1297900/Gothic_1_Remake/"
 - title: "Zero Parades: For Dead Spies"
-  role: QA Manager
+  role: "QA Manager"
   year: 2026
-  image: /assets/img/games/ZeroParadesForDeadSpies.jpg
-  url: https://store.steampowered.com/app/2863680/ZERO_PARADES_For_Dead_Spies/
+  image: "/assets/img/games/ZeroParadesForDeadSpies.jpg"
+  url: "https://store.steampowered.com/app/2863680/ZERO_PARADES_For_Dead_Spies/"
+- title: "AFK Journey"
+  role: "RU LQA"
+  year: 2024
+  credited: false
+  image: "/assets/img/games/AFKJourney.jpg"
+  url: "https://store.steampowered.com/app/4195600/AFK_Journey/"
+- title: "Docked"
+  role: "RU LQA"
+  year: 2026
+  credited: false
+  image: "/assets/img/games/Docked.jpg"
+  url: "https://store.steampowered.com/app/2487300/Docked/"
+- title: "Forgotten Playland: Party Edition"
+  role: "FQA Lead"
+  year: 2025
+  credited: false
+  image: "/assets/img/games/ForgottenPlayland.jpg"
+  url: "https://store.steampowered.com/app/3840260/Forgotten_Playland_Party_Edition/"
+
+# ---------- 2025 ----------
+- title: "Rue Valley"
+  role: "Additional QA Support"
+  year: 2025
+  image: "/assets/img/games/RueValley.jpg"
+  url: "https://store.steampowered.com/app/2126190/Rue_Valley/"
+- title: "Goodnight Universe"
+  role: "QA Lead"
+  year: 2025
+  image: "/assets/img/games/GoodnightUniverse.jpg"
+  url: "https://store.steampowered.com/app/2416100/Goodnight_Universe/"
+- title: "Dispatch"
+  role: "QA Lead, Additional LQA Support"
+  year: 2025
+  image: "/assets/img/games/Dispatch.jpg"
+  url: "https://store.steampowered.com/app/2592160/Dispatch/"
+- title: "The Knightling"
+  role: "LQA Lead"
+  year: 2025
+  image: "/assets/img/games/TheKnightling.jpg"
+  url: "https://store.steampowered.com/app/1471650/The_Knightling/"
+- title: "Sonokuni"
+  role: "RU LQA"
+  year: 2025
+  image: "/assets/img/games/SONOKUNI.jpg"
+  url: "https://store.steampowered.com/app/2054380/SONOKUNI/"
+- title: "Surviving Mars"
+  role: "FQA"
+  year: 2022
+  credited: false
+  image: "/assets/img/games/SurvivingMars.jpg"
+  url: "https://store.steampowered.com/app/464920/Surviving_Mars/"
+- title: "Captain Blood"
+  role: "FQA"
+  year: 2025
+  credited: false
+  image: "/assets/img/games/CaptainBlood.jpg"
+  url: "https://store.steampowered.com/app/3040220/Captain_Blood/"
+- title: "Chorus of Carcosa"
+  role: "FQA Lead"
+  year: 2025
+  credited: false
+  image: "/assets/img/games/ChorusofCarcosa.jpg"
+  url: "https://store.steampowered.com/app/2987750/Chorus_of_Carcosa/"
+- title: "Bustafellows: Season 2"
+  role: "LQA Lead"
+  year: 2025
+  credited: false
+  image: "/assets/img/games/BustafellowsSeason2.jpg"
+  url: "https://store.steampowered.com/app/3026310/BUSTAFELLOWS_season2/"
+
+# ---------- 2024 ----------
+- title: "Rebots"
+  role: "LQA Lead"
+  year: 2024
+  image: "/assets/img/games/Rebots.jpg"
+  url: "https://store.steampowered.com/app/993030/Rebots/"
+- title: "shapez 2 - Factory"
+  role: "RU LQA"
+  year: 2024
+  image: "/assets/img/games/shapez2Factory.jpg"
+  url: "https://store.steampowered.com/app/2162800/shapez_2__Factory/"
+- title: "Hades II"
+  role: "RU LQA"
+  year: 2024
+  image: "/assets/img/games/Hades2.jpg"
+  url: "https://store.steampowered.com/app/1145350/Hades_II/"
+- title: "Cyberpunk 2077"
+  role: "RU VO QA, RU and UK LQA Lead"
+  year: 2024
+  image: "/assets/img/games/Cyberpunk2077.jpg"
+  url: "https://store.steampowered.com/app/1091500/Cyberpunk_2077/"
+- title: "Legendary Hoplite"
+  role: "FQA"
+  year: 2024
+  credited: false
+  image: "/assets/img/games/LegendaryHoplite.jpg"
+  url: "https://store.steampowered.com/app/1479810/Legendary_Hoplite/"
+- title: "Metaphor: ReFantazio"
+  role: "RU LQA"
+  year: 2024
+  credited: false
+  image: "/assets/img/games/MetaphorReFantazio.jpg"
+  url: "https://store.steampowered.com/app/2679460/Metaphor_ReFantazio/"
+- title: "Kingsgrave"
+  role: "FQA and Compat Lead"
+  year: 2024
+  credited: false
+  image: "/assets/img/games/Kingsgrave.jpg"
+  url: "https://store.steampowered.com/app/2644360/Kingsgrave/"
+- title: "Technotopia"
+  role: "Compat QA Lead"
+  year: 2024
+  credited: false
+  image: "/assets/img/games/Technotopia.jpg"
+  url: "https://store.steampowered.com/app/2825110/Technotopia/"
+- title: "Karate Survivor"
+  role: "Compat QA Lead"
+  year: 2024
+  credited: false
+  image: "/assets/img/games/KarateSurvivor.jpg"
+  url: "https://store.steampowered.com/app/3027930/Karate_Survivor/"
+- title: "Приключения Пети и Волка"
+  role: "FQA"
+  year: 2024
+  credited: false
+  image: "/assets/img/games/petya&volk.jpg"
+  url: "https://play.google.com/store/apps/details?id=com.kbpro.smf.PetyaAndVolk"
+
+# ---------- 2023 ----------
+- title: "Goat Simulator 3"
+  role: "FQA, RU LQA, LQA Lead"
+  year: 2023
+  image: "/assets/img/games/GoatSimulator3.jpg"
+  url: "https://store.steampowered.com/app/850190/Goat_Simulator_3/"
+- title: "Station to Station"
+  role: "RU LQA"
+  year: 2023
+  image: "/assets/img/games/StationtoStation.jpg"
+  url: "https://store.steampowered.com/app/2272400/Station_to_Station/"
+- title: "Untamed Tactics"
+  role: "FQA"
+  year: 2023
+  image: "/assets/img/games/UntamedTactics.jpg"
+  url: "https://store.steampowered.com/app/1538900/Untamed_Tactics/"
+- title: "ENDLESS Dungeon™"
+  role: "RU LQA"
+  year: 2023
+  image: "/assets/img/games/ENDLESSDungeon.jpg"
+  url: "https://store.steampowered.com/app/1485590/ENDLESS_Dungeon__Definitive_Edition/"
+- title: "Soul Knight Prequel"
+  role: "RU LQA, LQA Lead"
+  year: 2023
+  credited: false
+  image: "/assets/img/games/SoulKnightPrequel.jpg"
+  url: "https://play.google.com/store/apps/details?id=com.chillyroom.soulknightprequel"
+
+# ---------- 2022 ----------
+- title: "Cartel Tycoon"
+  role: "FQA"
+  year: 2022
+  credited: false
+  image: "/assets/img/games/CartelTycoon.jpg"
+  url: "https://store.steampowered.com/app/1220140/Cartel_Tycoon/"
+- title: "Spirit of the Island"
+  role: "RU LQA"
+  year: 2022
+  credited: false
+  image: "/assets/img/games/SpiritoftheIsland.jpg"
+  url: "https://store.steampowered.com/app/1592110/Spirit_of_the_Island/"
+- title: "UNDECEMBER: The Farside"
+  role: "RU LQA"
+  year: 2022
+  credited: false
+  image: "/assets/img/games/UNDECEMBER.jpg"
+  url: "https://store.steampowered.com/app/1549250/UNDECEMBER_The_Farside/"
+- title: "Fabular: Once Upon a Spacetime"
+  role: "FQA"
+  year: 2022
+  credited: false
+  image: "/assets/img/games/FabularOnceUponaSpacetime.jpg"
+  url: "https://store.steampowered.com/app/645720/Fabular_Once_Upon_a_Spacetime/"
+- title: "World War 3"
+  role: "EN LQA, LQA Lead"
+  year: 2022
+  credited: false
+  image: "/assets/img/games/WorldWar3.jpg"
+  url: "https://store.steampowered.com/app/674020/World_War_3/"
+
+# ---------- 2021 ----------
+- title: "The Witcher 3: Wild Hunt"
+  role: "RU LQA Lead"
+  year: 2021
+  image: "/assets/img/games/TheWitcher3WildHunt.jpg"
+  url: "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt__Complete_Edition/"
+- title: "Dungeons & Dragons: Dark Alliance"
+  role: "RU LQA"
+  year: 2021
+  credited: false
+  image: "/assets/img/games/Dungeons&DragonsDarkAlliance.jpg"
+  url: "https://store.steampowered.com/agecheck/app/623280/"
+- title: "A Total War Saga: TROY"
+  role: "RU LQA Lead"
+  year: 2021
+  credited: false
+  image: "/assets/img/games/ATotalWarSagaTROY.jpg"
+  url: "https://store.steampowered.com/app/1099410/A_Total_War_Saga_TROY/"
+- title: "Valor Legends: Shoot & Run"
+  role: "RU LQA"
+  year: 2021
+  credited: false
+  image: "/assets/img/games/ValorLegendsShoot&Run.jpg"
+  url: "https://valorlegends.centurygames.com/"
+- title: "Blade of Darkness"
+  role: "FQA"
+  year: 2021
+  credited: false
+  image: "/assets/img/games/BladeofDarkness.jpg"
+  url: "https://store.steampowered.com/app/1710170/Blade_of_Darkness/"
+
+# ---------- 2020 ----------
+- title: "The Elder Scrolls® Online"
+  role: "RU Translation and LQA"
+  year: 2020
+  image: "/assets/img/games/TheElderScrollsOnline.jpg"
+  url: "https://store.steampowered.com/app/306130/The_Elder_Scrolls_Online/"
+- title: "Yakuza: Like a Dragon"
+  role: "RU LQA Lead"
+  year: 2021
+  credited: false
+  image: "/assets/img/games/YakuzaLikeaDragon.jpg"
+  url: "https://store.steampowered.com/app/1235140/Yakuza_Like_a_Dragon/"
+- title: "Fallout 76"
+  role: "Translation"
+  year: 2020
+  credited: false
+  image: "/assets/img/games/Fallout76.jpg"
+  url: "https://store.steampowered.com/app/1151340/Fallout_76/"
+
+# ---------- 2019 ----------
+- title: "Total War: THREE KINGDOMS"
+  role: "RU LQA Lead"
+  year: 2021
+  credited: false
+  image: "/assets/img/games/TotalWarTHREE KINGDOMS.jpg"
+  url: "https://store.steampowered.com/app/779340/Total_War_THREE_KINGDOMS/"
+
+# ---------- 2014 ----------
+- title: "Two Dots: Puzzle Games"
+  role: "RU LQA"
+  year: 2023
+  credited: false
+  image: "/assets/img/games/TwoDotsPuzzleGames.jpg"
+  url: "https://www.twodots-game.com/game"
+
+# ---------- Not released (last tab; genre placeholders, no cover) ----------
+- title: "Management Strategy Game"
+  role: "RU LQA"
+  group: "Not released"
+  image: "/assets/img/games/nda.jpg"
+  url: ""
+- title: "Card Roguelike Game"
+  role: "FQA"
+  group: "Not released"
+  image: "/assets/img/games/nda.jpg"
+  url: ""
