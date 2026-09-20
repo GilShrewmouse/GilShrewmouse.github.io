@@ -12,22 +12,13 @@ title: Home
   <h2>About</h2>
   <p>MY ABOUT TEXT HERE.</p>
   <p class="links">
-    <a href="mailto:c.podsevalova@gamil.com">Email</a>
+    <a href="mailto:c.podsevalova@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/c-podsevalova/">LinkedIn</a>
   </p>
 </section>
 
-<section id="portfolio" class="panel">
+<section class="panel">
   <h2>Portfolio</h2>
-  <div class="grid">
-    {% for g in site.data.games %}
-    <a class="tile" href="{{ g.url }}" target="_blank" rel="noopener">
-      <img src="{{ g.image }}" alt="{{ g.title }}">
-      <div class="tile-info">
-        <h3>{{ g.title }}</h3>
-        <span>{{ g.role }} · {{ g.year }}</span>
-      </div>
-    </a>
-    {% endfor %}
-  </div>
+  <p>Games I have worked on, by year.</p>
+  <p><a class="button" href="{{ '/games.html' | relative_url }}">See my games</a></p>
 </section>
