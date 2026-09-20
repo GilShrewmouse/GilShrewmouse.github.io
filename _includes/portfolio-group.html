@@ -1,0 +1,27 @@
+{% comment %} One portfolio panel (one year, or "Not released"): a heading and a grid of tiles. Used by index.html.
+   Parameters: key (matches the tab's data-year), title (heading text), games (list from _data/games.yml).
+   A game with an empty image gets an empty tile; with an empty url it is not a link;
+   with credited: false it gets "(not credited)" after the role. {% endcomment %}
+{% if include.games.size > 0 %}
+<div class="year-panel" data-year="{{ include.key }}">
+<h3 class="year">{{ include.title }}</h3>
+<div class="grid">
+  {% for g in include.games %}
+  {% assign has_image = false %}
+  {% if g.image.size > 0 %}{% assign has_image = true %}{% endif %}
+  {% capture tile %}
+    {% if has_image %}<img src="{{ g.image | relative_url | uri_escape | escape }}" alt="{{ g.title | escape }}" loading="lazy">{% endif %}
+    <div class="tile-info">
+      <h4>{{ g.title | escape }}</h4>
+      <span>{{ g.role | escape }}{% if g.credited == false %} (not credited){% endif %}</span>
+    </div>
+  {% endcapture %}
+  {% if g.url.size > 0 %}
+  <a class="tile{% unless has_image %} no-image{% endunless %}" href="{{ g.url }}" target="_blank" rel="noopener">{{ tile }}</a>
+  {% else %}
+  <div class="tile{% unless has_image %} no-image{% endunless %}">{{ tile }}</div>
+  {% endif %}
+  {% endfor %}
+</div>
+</div>
+{% endif %}
