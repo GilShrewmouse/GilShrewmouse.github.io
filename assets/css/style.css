@@ -14,7 +14,7 @@
   --tile-strip: rgba(14, 10, 6, 0.78); /* dark strip behind the game name on hover */
   --topbar-h: 56px;                    /* height of the top menu */
   --radius: 16px;
-  --page-width: 1520px;                /* fits 3 game tiles of 460px + gaps + paddings */
+  --page-width: 1496px;                /* fits 3 game tiles of 460px + gaps + paddings */
   --font-body: "Inter", system-ui, sans-serif;
   --font-head: "Space Grotesk", var(--font-body);
 }
@@ -45,12 +45,11 @@ nav a { margin-left: 22px; color: var(--text); }
 nav a:hover { color: var(--accent); text-decoration: none; }
 
 main { max-width: var(--page-width); margin: 0 auto; padding: 0 20px 60px; }
-/* First screen: the intro (avatar + name + tagline, then About) is centered vertically on load.
+/* First screen: the intro (avatar + name + tagline, then About) starts near the top, so the
+   Portfolio is already peeking in on load (no big empty areas above and below).
    Narrow screens: the header row sits above the About block.
    Wide screens (1000px and up): About on the left, a profile card on the right. */
-.first-screen { min-height: calc(100vh - var(--topbar-h));
-                min-height: calc(100svh - var(--topbar-h));
-                display: flex; flex-direction: column; justify-content: center; padding: 20px 0; }
+.first-screen { padding-top: 32px; }
 .intro .panel { margin: 0; }
 .hero { display: flex; align-items: center; justify-content: center; gap: 24px;
         padding: 12px 0 28px; }
@@ -60,11 +59,11 @@ main { max-width: var(--page-width); margin: 0 auto; padding: 0 20px 60px; }
 .tagline { margin: 0; color: var(--muted); font-size: 1.15rem; }
 @media (max-width: 600px) { .hero { flex-direction: column; gap: 12px; text-align: center; } }
 @media (min-width: 1000px) {
-  .intro { display: grid; grid-template-columns: minmax(0, 1fr) clamp(300px, 28vw, 380px); gap: 28px; }
+  .intro { display: grid; grid-template-columns: minmax(0, 1fr) clamp(300px, 28vw, 380px); gap: 20px; }
   .intro #about { grid-column: 1; grid-row: 1; }
   .hero { grid-column: 2; grid-row: 1;               /* the profile card, same look as the panels */
           flex-direction: column; justify-content: center; gap: 20px; text-align: center;
-          background: var(--panel); border-radius: var(--radius); padding: 32px;
+          background: var(--panel); border-radius: var(--radius); padding: 24px;
           backdrop-filter: blur(6px); }
   .avatar { width: 180px; height: 180px; }
   .hero-text h1 { font-size: 1.8rem; }
@@ -72,11 +71,11 @@ main { max-width: var(--page-width); margin: 0 auto; padding: 0 20px 60px; }
 }
 
 .panel { background: var(--panel); border-radius: var(--radius);
-         padding: 32px; margin: 28px 0; backdrop-filter: blur(6px);
+         padding: 24px; margin: 20px 0; backdrop-filter: blur(6px);
          scroll-margin-top: 80px; }
 
 /* 3 tiles per row; at full page width each tile is exactly 460x215 */
-.grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); }
 .tile { position: relative; display: block; border-radius: 12px; overflow: hidden;
         aspect-ratio: 460 / 215; transition: transform .2s; }
 a.tile:hover { transform: translateY(-4px); text-decoration: none; }
@@ -106,6 +105,8 @@ footer { text-align: center; color: var(--muted); padding: 30px; }
 @media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
 /* Portfolio: intro text, year tabs, one panel per year */
 .portfolio-intro, .about-text { color: var(--muted); margin: 0 0 22px; max-width: 760px; }
+/* About text: a bit larger and wider on wide screens, so it fills its block better */
+@media (min-width: 1000px) { .about-text { font-size: 1.1rem; max-width: 860px; } }
 .year-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
 .year-tab {
   font: inherit; color: var(--text); cursor: pointer;
@@ -137,4 +138,14 @@ footer { text-align: center; color: var(--muted); padding: 30px; }
   transform: translateY(var(--icon-shift, 0));
   -webkit-mask: var(--icon) center / contain no-repeat;
           mask: var(--icon) center / contain no-repeat;
+}
+
+/* Keyboard users: a clear outline on whatever has focus */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.tile:focus-visible { outline-offset: -2px; }
+
+/* People who asked their system for less motion: no smooth scrolling or animations */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }

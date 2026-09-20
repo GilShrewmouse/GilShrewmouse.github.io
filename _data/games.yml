@@ -9,7 +9,6 @@
 # Year tabs are created automatically, newest first. Inside a year, tiles are sorted A-Z by title,
 # so it does not matter where in this file a game is placed - only its `year:` counts.
 
-# ---------- 2026 ----------
 - title: "Gothic 1 Remake"
   role: "RU LQA"
   year: 2026
@@ -39,7 +38,6 @@
   image: "/assets/img/games/ForgottenPlayland.jpg"
   url: "https://store.steampowered.com/app/3840260/Forgotten_Playland_Party_Edition/"
 
-# ---------- 2025 ----------
 - title: "Rue Valley"
   role: "Additional QA Support"
   year: 2025
@@ -90,7 +88,6 @@
   image: "/assets/img/games/BustafellowsSeason2.jpg"
   url: "https://store.steampowered.com/app/3026310/BUSTAFELLOWS_season2/"
 
-# ---------- 2024 ----------
 - title: "Rebots"
   role: "LQA Lead"
   year: 2024
@@ -145,10 +142,9 @@
   role: "FQA"
   year: 2024
   credited: false
-  image: "/assets/img/games/petya&volk.jpg"
+  image: "/assets/img/games/PetyaAndVolk.jpg"
   url: "https://play.google.com/store/apps/details?id=com.kbpro.smf.PetyaAndVolk"
 
-# ---------- 2023 ----------
 - title: "Goat Simulator 3"
   role: "FQA, RU LQA, LQA Lead"
   year: 2023
@@ -176,7 +172,6 @@
   image: "/assets/img/games/SoulKnightPrequel.jpg"
   url: "https://play.google.com/store/apps/details?id=com.chillyroom.soulknightprequel"
 
-# ---------- 2022 ----------
 - title: "Cartel Tycoon"
   role: "FQA"
   year: 2022
@@ -208,7 +203,6 @@
   image: "/assets/img/games/WorldWar3.jpg"
   url: "https://store.steampowered.com/app/674020/World_War_3/"
 
-# ---------- 2021 ----------
 - title: "The Witcher 3: Wild Hunt"
   role: "RU LQA Lead"
   year: 2021
@@ -218,7 +212,7 @@
   role: "RU LQA"
   year: 2021
   credited: false
-  image: "/assets/img/games/Dungeons&DragonsDarkAlliance.jpg"
+  image: "/assets/img/games/DungeonsAndDragonsDarkAlliance.jpg"
   url: "https://store.steampowered.com/agecheck/app/623280/"
 - title: "A Total War Saga: TROY"
   role: "RU LQA Lead"
@@ -230,7 +224,7 @@
   role: "RU LQA"
   year: 2021
   credited: false
-  image: "/assets/img/games/ValorLegendsShoot&Run.jpg"
+  image: "/assets/img/games/ValorLegendsShootAndRun.jpg"
   url: "https://valorlegends.centurygames.com/"
 - title: "Blade of Darkness"
   role: "FQA"
@@ -239,7 +233,6 @@
   image: "/assets/img/games/BladeofDarkness.jpg"
   url: "https://store.steampowered.com/app/1710170/Blade_of_Darkness/"
 
-# ---------- 2020 ----------
 - title: "The Elder Scrolls® Online"
   role: "RU Translation and LQA"
   year: 2020
@@ -258,15 +251,13 @@
   image: "/assets/img/games/Fallout76.jpg"
   url: "https://store.steampowered.com/app/1151340/Fallout_76/"
 
-# ---------- 2019 ----------
 - title: "Total War: THREE KINGDOMS"
   role: "RU LQA Lead"
   year: 2021
   credited: false
-  image: "/assets/img/games/TotalWarTHREE KINGDOMS.jpg"
+  image: "/assets/img/games/TotalWarThreeKingdoms.jpg"
   url: "https://store.steampowered.com/app/779340/Total_War_THREE_KINGDOMS/"
 
-# ---------- 2014 ----------
 - title: "Two Dots: Puzzle Games"
   role: "RU LQA"
   year: 2023

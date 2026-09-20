@@ -1,14 +1,16 @@
 ---
 layout: default
-title: Home
+title: "Ekaterina Podsevalova - (L)QA in gamedev"
+description: "QA manager and localization QA (LQA) in games. Portfolio of 40+ titles, from Cyberpunk 2077 to Hades II and Dispatch. Mostly silent lurker by life."
 ---
 <div class="first-screen">
 <div class="intro">
 <section class="hero">
-  <img class="avatar" src="/assets/img/av_square.jpg" alt="">
+  <img class="avatar" src="/assets/img/av_square.jpg" alt="Portrait of Ekaterina with windswept green hair and glasses, the sea behind" width="360" height="360">
   <div class="hero-text">
     <h1>Hi, I'm Ekaterina!</h1>
-    <p class="tagline">Mostly silent lurker by life, (L)QA in gamedev by trade.</p>
+    <p class="tagline">Mostly silent lurker by life, (L)QA in gamedev by trade.<br>
+    <i>By the word, I wind the gears.</i></p>
   </div>
 </section>
 
@@ -36,12 +38,12 @@ I have experience with functional, compliance, and compatibility testing - and, 
   {% assign not_released = site.data.games | where: "group", "Not released" | sort_natural: "title" %}
 
   {% comment %} Tabs: years newest first, then "Not released". {% endcomment %}
-  <div class="year-tabs" role="tablist" aria-label="Choose a year">
+  <div class="year-tabs" role="group" aria-label="Choose a year">
     {% for y in years %}
-    <button type="button" class="year-tab" role="tab" data-year="{{ y }}">{{ y }}</button>
+    <button type="button" class="year-tab" aria-pressed="false" data-year="{{ y }}">{{ y }}</button>
     {% endfor %}
     {% if not_released.size > 0 %}
-    <button type="button" class="year-tab" role="tab" data-year="not-released">Not released</button>
+    <button type="button" class="year-tab" aria-pressed="false" data-year="not-released">Not released</button>
     {% endif %}
   </div>
 
@@ -65,7 +67,7 @@ I have experience with functional, compliance, and compatibility testing - and, 
         tabs.forEach(function (t) {
           var on = t.dataset.year === year;
           t.classList.toggle('active', on);
-          t.setAttribute('aria-selected', on);
+          t.setAttribute('aria-pressed', on);
         });
         panels.forEach(function (p) { p.hidden = p.dataset.year !== year; });
       }

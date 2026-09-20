@@ -3,3 +3,15 @@ description: (L)QA (L)QA in gamedev by trade, mostly silent lurker by life
 url: "https://gilshrewmouse.github.io"
 markdown: kramdown
 permalink: /blog/:year/:month/:title/
+
+# Show the "Blog" link in the top menu? Turn on (true) when there is a real post.
+# The blog page itself always exists at /blog/.
+show_blog: false
+
+# Project files that must not be published on the website
+exclude:
+  - CLAUDE.md
+  - README.md
+  - tools
+  - Gemfile
+  - Gemfile.lock

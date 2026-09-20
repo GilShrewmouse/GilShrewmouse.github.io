@@ -3,7 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title | default: site.title }}</title>
+  {%- comment -%} Title, description and link-preview values. Home page: its own title. Other pages: "Page | Site".
+      Description: the page's own, else (for blog posts) the start of the post, else the site description. {%- endcomment -%}
+  {%- if page.url == '/' -%}{%- assign page_title = page.title | default: site.title -%}
+  {%- elsif page.title -%}{%- capture page_title -%}{{ page.title }} | {{ site.title }}{%- endcapture -%}
+  {%- else -%}{%- assign page_title = site.title -%}{%- endif -%}
+  {%- if page.description -%}{%- assign page_desc = page.description -%}
+  {%- elsif page.collection == 'posts' -%}{%- assign page_desc = page.excerpt | strip_html | strip_newlines | truncatewords: 30 -%}
+  {%- else -%}{%- assign page_desc = site.description -%}{%- endif -%}
+  <title>{{ page_title | escape }}</title>
+  <meta name="description" content="{{ page_desc | strip_html | strip_newlines | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:type" content="{% if page.collection == 'posts' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:description" content="{{ page_desc | strip_html | strip_newlines | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/img/og-card.jpg' | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Card with a portrait of Ekaterina Podsevalova, the line '(L)QA in gamedev by trade, mostly silent lurker by life' and covers of Cyberpunk 2077, Hades II, Dispatch and Gothic 1 Remake">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="{{ '/assets/favicon/favicon.ico' | relative_url }}" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}">
@@ -20,7 +40,7 @@
     <nav>
       <a href="{{ '/#about' | relative_url }}">About</a>
       <a href="{{ '/#portfolio' | relative_url }}">Portfolio</a>
-      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      {% if site.show_blog %}<a href="{{ '/blog/' | relative_url }}">Blog</a>{% endif %}
     </nav>
   </header>
   <main>{{ content }}</main>

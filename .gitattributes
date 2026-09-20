@@ -1,0 +1,9 @@
+# Let Git handle Windows/Unix line endings itself (stops the "LF will be replaced by CRLF" warnings)
+* text=auto
+
+# Never touch images and icons
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.ico binary
