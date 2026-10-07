@@ -31,6 +31,45 @@
   credited: false
   image: "/assets/img/games/Docked.jpg"
   url: "https://store.steampowered.com/app/2487300/Docked/"
+- title: "Warhammer Classics Collection"
+  role: "QA Manager"
+  year: 2026
+  credited: false
+  image: "/assets/img/games/WarhammerClassicsCollection.jpg"
+  url: "https://store.steampowered.com/bundle/79499/Warhammer_Classics_Collection/"
+- title: "Cash Cleaner Simulator"
+  role: "QA Manager"
+  year: 2026
+  credited: false
+  image: "/assets/img/games/CashCleanerSimulator.jpg"
+  url: "https://store.steampowered.com/app/2488370/Cash_Cleaner_Simulator/"
+- title: "The Witcher 3: Wild Hunt — Remastered"
+  role: "RU and UK LQA Lead"
+  year: 2026
+  image: "/assets/img/games/TheWitcher3WildHuntRemastered.jpg"
+  url: "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt__Remastered/"
+- title: "Leaf Blower Co"
+  role: "QA Manager"
+  year: 2026
+  credited: false
+  image: "/assets/img/games/LeafBlowerCo.jpg"
+  url: "https://store.steampowered.com/app/3571710/Leaf_Blower_Co/"
+- title: "The Spotter: Dig or Die"
+  role: "FQA, QA Manager"
+  year: 2026
+  credited: false
+  image: "/assets/img/games/TheSpotterDigorDie.jpg"
+  url: "https://store.steampowered.com/app/3976500/The_Spotter_Dig_or_Die/"
+- title: "Bus Bound"
+  role: "QA Manager"
+  year: 2026
+  image: "/assets/img/games/BusBound.jpg"
+  url: "https://store.steampowered.com/app/2095420/Bus_Bound/"
+- title: "Tempest Rising: The Veti’s Wrath"
+  role: "RU LQA, QA Manager"
+  year: 2026
+  image: "/assets/img/games/TempestRisingTheVetisWrath.jpg"
+  url: "https://store.steampowered.com/app/4114220/Tempest_Rising_The_Vetis_Wrath/"
 - title: "Forgotten Playland: Party Edition"
   role: "FQA Lead"
   year: 2025
@@ -167,7 +206,7 @@
   url: "https://store.steampowered.com/app/1485590/ENDLESS_Dungeon__Definitive_Edition/"
 - title: "Soul Knight Prequel"
   role: "RU LQA, LQA Lead"
-  year: 2023
+  year: 2024
   credited: false
   image: "/assets/img/games/SoulKnightPrequel.jpg"
   url: "https://play.google.com/store/apps/details?id=com.chillyroom.soulknightprequel"
@@ -213,7 +252,7 @@
   year: 2021
   credited: false
   image: "/assets/img/games/DungeonsAndDragonsDarkAlliance.jpg"
-  url: "https://store.steampowered.com/agecheck/app/623280/"
+  url: "https://store.steampowered.com/app/623280/Dungeons__Dragons_Dark_Alliance/"
 - title: "A Total War Saga: TROY"
   role: "RU LQA Lead"
   year: 2021

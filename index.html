@@ -18,7 +18,7 @@ description: "All-around QA in games with a special passion for LQA. Portfolio o
   <h2>About</h2>
   <p class="about-text">Hi, I'm Ekaterina! I started my career in gamedev as a community manager (there are a few casual mobile games under my belt, and ArcheAge), but this is about my next step: QA.<br><br>
 In 2020, I joined <a href="https://www.mostgames.org/" target="_blank">The Most Games</a> as a QA tester, and since then, I evolved into a senior QA tester, then lead QA, and finally QA manager. Not your usual Pokémon!<br><br>
-I have experience with functional, compliance, and compatibility testing - and, of course, my favorite: localization testing. And I still find time to work on some projects personally - I'd hate to lose my hands-on experience!</p>
+I have experience with functional, compliance, and compatibility testing – and, of course, my favorite: localization testing. And I still find time to work on some projects personally – I'd hate to lose my hands-on experience!</p>
   <p class="socials">
     {% for link in site.data.links %}
     <a class="button{% if link.primary %} primary{% endif %}" href="{{ link.url }}"{% unless link.url contains "mailto:" %} target="_blank" rel="noopener me"{% endunless %}>
@@ -32,7 +32,7 @@ I have experience with functional, compliance, and compatibility testing - and, 
 
 <section id="portfolio" class="panel">
   <h2>Portfolio</h2>
-  <p class="portfolio-intro">Here are the games I worked on, sorted by year. The year is usually the same as the release year, but not always - for some projects, it is a DLC release, a new edition, or a specific year in which I was part of the team.</p>
+  <p class="portfolio-intro">Here are the games I worked on, sorted by year. The year is usually the same as the release year, but not always – for some projects, it is a DLC release, a new edition, or a specific year in which I was part of the team.</p>
 
   {% assign years = site.data.games | where_exp: "g", "g.year" | map: "year" | uniq | sort | reverse %}
   {% assign not_released = site.data.games | where: "group", "Not released" | sort_natural: "title" %}
@@ -72,15 +72,38 @@ I have experience with functional, compliance, and compatibility testing - and, 
         panels.forEach(function (p) { p.hidden = p.dataset.year !== year; });
       }
 
-      tabs.forEach(function (t) {
-        t.addEventListener('click', function () { show(t.dataset.year); });
-      });
+      function hasTab(year) {
+        return Array.prototype.some.call(tabs, function (t) { return t.dataset.year === year; });
+      }
 
-      // Open on the current year; if it has no games, on the newest year.
-      var now = String(new Date().getFullYear());
-      var hasNow = Array.prototype.some.call(tabs, function (t) { return t.dataset.year === now; });
+      // Direct links to a year: /#2024 (or /#not-released) opens that tab and scrolls to the Portfolio.
+      // On page load it jumps there at once; later (a link on the same page) it scrolls smoothly.
+      function fromLink(e) {
+        var year = decodeURIComponent(location.hash.slice(1));
+        if (!hasTab(year)) return false;
+        show(year);
+        section.scrollIntoView({ behavior: e ? 'auto' : 'instant' }); // 'auto' follows the CSS (no motion if reduced)
+        return true;
+      }
+
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () {
+          show(t.dataset.year);
+          // Put the year in the address bar, so the link can be copied and shared
+          history.replaceState(null, '', '#' + t.dataset.year);
+        });
+      });
+      window.addEventListener('hashchange', fromLink);
+
+      // Otherwise open on the current year; if it has no games, on the newest year.
       section.classList.add('tabs-on');
-      show(hasNow ? now : tabs[0].dataset.year);
+      if (fromLink()) {
+        // Fonts and pictures can still change the page height while loading, so line up again at the end
+        window.addEventListener('load', function () { fromLink(); });
+      } else {
+        var now = String(new Date().getFullYear());
+        show(hasTab(now) ? now : tabs[0].dataset.year);
+      }
     })();
   </script>
 </section>

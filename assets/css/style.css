@@ -1,9 +1,9 @@
 :root {
   /* EDIT THESE to restyle the whole site. Colors are taken from the background photo:
      warm dark browns from the night sky, brass gold from the metal bars. */
-  --bg-image: url("/assets/img/background.jpg");
+  --bg-image: url("/assets/img/background.webp"); /* made from background.jpg, see CLAUDE.md */
   --bg-base: #0d0a07;                  /* page color behind the photo */
-  --overlay: rgba(14, 10, 6, 0.66);    /* darkness over the photo; raise 0.66 for darker */
+  --overlay: rgba(14, 10, 6, 0.56);    /* darkness over the photo; raise 0.56 for darker */
   --panel: rgba(28, 21, 14, 0.74);     /* card background */
   --topbar: rgba(16, 12, 8, 0.55);     /* top menu background */
   --text: #f2ebdd;
@@ -17,6 +17,7 @@
   --page-width: 1496px;                /* fits 3 game tiles of 460px + gaps + paddings */
   --font-body: "Inter", system-ui, sans-serif;
   --font-head: "Space Grotesk", var(--font-body);
+  color-scheme: dark;                  /* dark scrollbars and browser controls */
 }
 
 * { box-sizing: border-box; }
@@ -33,6 +34,7 @@ body {
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 h1, h2, h3, h4 { font-family: var(--font-head); margin: 0 0 .5em; }
+b, strong { font-weight: 600; }      /* the loaded Inter weight, so bold text is not faked */
 
 .topbar {
   position: sticky; top: 0; z-index: 10;
@@ -48,7 +50,7 @@ main { max-width: var(--page-width); margin: 0 auto; padding: 0 20px 60px; }
 /* First screen: the intro (avatar + name + tagline, then About) starts near the top, so the
    Portfolio is already peeking in on load (no big empty areas above and below).
    Narrow screens: the header row sits above the About block.
-   Wide screens (1000px and up): About on the left, a profile card on the right. */
+   Wide screens (1000px and up): a profile card on the left (read first), About on the right. */
 .first-screen { padding-top: 32px; }
 .intro .panel { margin: 0; }
 .hero { display: flex; align-items: center; justify-content: center; gap: 24px;
@@ -59,9 +61,9 @@ main { max-width: var(--page-width); margin: 0 auto; padding: 0 20px 60px; }
 .tagline { margin: 0; color: var(--muted); font-size: 1.15rem; }
 @media (max-width: 600px) { .hero { flex-direction: column; gap: 12px; text-align: center; } }
 @media (min-width: 1000px) {
-  .intro { display: grid; grid-template-columns: minmax(0, 1fr) clamp(300px, 28vw, 380px); gap: 20px; }
-  .intro #about { grid-column: 1; grid-row: 1; }
-  .hero { grid-column: 2; grid-row: 1;               /* the profile card, same look as the panels */
+  .intro { display: grid; grid-template-columns: clamp(300px, 28vw, 380px) minmax(0, 1fr); gap: 20px; }
+  .intro #about { grid-column: 2; grid-row: 1; }
+  .hero { grid-column: 1; grid-row: 1;               /* the profile card, same look as the panels */
           flex-direction: column; justify-content: center; gap: 20px; text-align: center;
           background: var(--panel); border-radius: var(--radius); padding: 24px;
           backdrop-filter: blur(6px); }
@@ -97,6 +99,10 @@ a.tile:hover { transform: translateY(-4px); text-decoration: none; }
 /* Images inside blog posts: never wider than the text block, tall photos capped to the screen height */
 .panel p > img { max-width: 100%; max-height: 80vh; height: auto; border-radius: 12px; }
 .post-item { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.back-link { margin: 0 0 14px; font-size: .9rem; }
+/* "Page not found" page */
+.not-found { max-width: 640px; margin: 12vh auto 0; text-align: center; }
+.not-found p { color: var(--muted); }
 time { color: var(--muted); font-size: .85rem; }
 footer { text-align: center; color: var(--muted); padding: 30px; }
 

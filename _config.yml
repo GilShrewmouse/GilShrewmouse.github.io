@@ -8,6 +8,10 @@ permalink: /blog/:year/:month/:title/
 # The blog page itself always exists at /blog/.
 show_blog: false
 
+# Builds /sitemap.xml and /robots.txt (helps search engines find the pages)
+plugins:
+  - jekyll-sitemap
+
 # Project files that must not be published on the website
 exclude:
   - CLAUDE.md
@@ -15,3 +19,4 @@ exclude:
   - tools
   - Gemfile
   - Gemfile.lock
+  - assets/img/background.jpg   # original photo; the site uses background.webp
