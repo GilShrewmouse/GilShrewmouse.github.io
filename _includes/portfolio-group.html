@@ -1,7 +1,8 @@
 {% comment %} One portfolio panel (one year, or "Not released"): a heading and a grid of tiles. Used by index.html.
    Parameters: key (matches the tab's data-year), title (heading text), games (list from _data/games.yml).
    A game with an empty image gets an empty tile; with an empty url it is not a link;
-   with credited: false it gets "(not credited)" after the role. {% endcomment %}
+   with credited: false it gets "(not credited)" after the role.
+   Covers have an empty alt text: the game name is already in the tile text, so screen readers say it only once. {% endcomment %}
 {% if include.games.size > 0 %}
 <div class="year-panel" data-year="{{ include.key }}">
 <h3 class="year">{{ include.title }}</h3>
@@ -10,7 +11,7 @@
   {% assign has_image = false %}
   {% if g.image.size > 0 %}{% assign has_image = true %}{% endif %}
   {% capture tile %}
-    {% if has_image %}<img src="{{ g.image | relative_url | uri_escape | escape }}" alt="{{ g.title | escape }}" loading="lazy">{% endif %}
+    {% if has_image %}<img src="{{ g.image | relative_url | uri_escape | escape }}" alt="" loading="lazy">{% endif %}
     <div class="tile-info">
       <h4>{{ g.title | escape }}</h4>
       <span>{{ g.role | escape }}{% if g.credited == false %} (not credited){% endif %}</span>
